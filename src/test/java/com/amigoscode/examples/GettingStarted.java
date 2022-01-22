@@ -17,6 +17,8 @@ public class GettingStarted {
         // 1. Find people aged less or equal 18
         // 2. Then change implementation to find first 10 people
         List<Person> people = MockData.getPeople();
+        List<Person> result =  people.stream().filter(p -> p.getAge() <=18).limit(10).collect(Collectors.toList());
+        result.forEach(System.out::println);
     }
 
     @Test
