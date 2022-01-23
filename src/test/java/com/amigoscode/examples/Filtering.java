@@ -17,6 +17,8 @@ public class Filtering {
     @Test
     public void filter() throws Exception {
         List<Car> cars = MockData.getCars();
+        List<Car> carsLess20000 = cars.stream().filter(c -> c.getPrice() > 20000).collect(Collectors.toList());
+        carsLess20000.forEach(System.out::println);
     }
 
     @Test
